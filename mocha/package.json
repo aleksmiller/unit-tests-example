@@ -1,0 +1,21 @@
+{
+  "name": "mocha-example",
+  "version": "1.0.0",
+  "description": "Mocha unit-test example",
+  "main": "quick.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "gulp test"
+  },
+  "keywords": [
+    "mocha"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-mocha": "^2.1.3"
+  }
+}
