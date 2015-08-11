@@ -1,13 +1,14 @@
 // sort module
 var Sort = (function() {
 
-    // quick sort
+    // swap function
     function swap(arr, i, j) {
         var temp = arr[i];
         arr[i] = arr[j];
         arr[j] = temp;
     }
 
+    // quick sort
     function partition( arr, left, right ) {
         var pivot = arr[ Math.floor((right + left)/2) ];
         var l = left;
