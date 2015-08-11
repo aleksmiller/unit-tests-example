@@ -55,11 +55,10 @@ var Sort = (function() {
         return quickSort(arr, 0, arr.length - 1);
     }
 
+    // bubble sort
     function bubble( arr ) {
-        var arr_len = arr.length;
-
-        for (var i = 0; i < arr_len; i++) {
-            for (j = 0, k = arr_len - i; j < k; j++) {
+        for (var i = arr.length; i > 0; i--) {
+            for (j = 0; j < i; j++) {
                 if (arr[j] > arr[j + 1]) {
                     swap(arr, j, j+1);
                 }
