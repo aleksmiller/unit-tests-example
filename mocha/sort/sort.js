@@ -55,8 +55,24 @@ var Sort = (function() {
         return quickSort(arr, 0, arr.length - 1);
     }
 
+    function bubble( arr ) {
+        var arr_len = arr.length;
+
+        for (var i = 0; i < arr_len; i++) {
+            for (j = 0, k = arr_len - i; j < k; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    swap(arr, j, j+1);
+                }
+            }
+        }
+
+        return arr;
+    }
+
+
     return {
-        quick: quick
+        quick: quick,
+        bubble: bubble
     }
 })();
 
