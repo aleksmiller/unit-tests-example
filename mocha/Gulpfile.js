@@ -1,6 +1,10 @@
 var gulp = require('gulp');
-var watch = require('gulp-watch');
 var mocha = require('gulp-mocha');
+
+var paths = {
+    scripts: '**/*.js',
+    tests: 'sort/*.spec.js'
+};
 
 function handleError(err) {
     console.log(err.toString());
@@ -8,11 +12,13 @@ function handleError(err) {
 }
 
 gulp.task('unit', function () {
-    return gulp.src('sort/*.spec.js')
+    return gulp.src(paths.tests)
         .pipe(mocha({ reporter: 'spec' })
             .on('error', handleError));
 });
 
 gulp.task('watch:unit', ['unit'], function () {
-    watch('{mocha}/**/*.js', ['unit']);
+    gulp.watch(paths.scripts, ['unit']);
 });
+
+gulp.task('default', ['watch:unit']);
