@@ -8,6 +8,6 @@ NPM deps `npm i`
 
 ## Run test
 
-Watcher `gulp watch-unit`
+Watcher `gulp`
 
-Single run `gulp unit`
+Tests single run `gulp unit`
