@@ -69,10 +69,45 @@ var Sort = (function() {
         return arr;
     }
 
+    // merge sort
+    // O(n log n)
+    function mergeSort( arr ) {
+        var arr_length = arr.length;
+        if (arr_length < 2) {
+            return arr;
+        }
+
+        var middle = Math.floor(arr_length/2);
+        var left = arr.slice(0, middle);
+        var right = arr.slice(middle);
+
+        return mergeArrays(mergeSort(left), mergeSort(right));
+    }
+
+    function mergeArrays( arr1, arr2 ) {
+        var result = [];
+        var l = 0;
+        var r = 0;
+
+        while(l < arr1.length && r < arr2.length) {
+            if(arr1[l] < arr2[r]) {
+                result.push(arr1[l++]);
+            } else {
+                result.push(arr2[r++]);
+            }
+        }
+
+        return result.concat(arr1.slice(l)).concat(arr2.slice(r));
+    }
+
+    function merge( arr ) {
+        return mergeSort(arr);
+    }
 
     return {
         quick: quick,
-        bubble: bubble
+        bubble: bubble,
+        merge: merge
     }
 })();
 
