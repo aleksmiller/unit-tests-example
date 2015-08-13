@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>App</title>
+
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/bower_components/angular/angular-csp.css"/> <!-- for ng-cloak etc -->
+
+    <link rel="stylesheet" href="/app/app.css"/>
+    <link rel="stylesheet" href="/app/components/footer/footer.css"/>
+</head>
+<body ng-cloak>
+    <ng-include src="'/app/components/header/header.html'"></ng-include>
+    <ui-view></ui-view>
+    <ng-include src="'/app/components/footer/footer.html'"></ng-include>
+
+    <!-- bower deps -->
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src="/bower_components/angular-bootstrap/ui-bootstrap.js"></script>
+    <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+
+    <!-- app -->
+    <script src="/app/app.module.js"></script>
+    <script src="/app/app.routes.js"></script>
+    <script src="/app/core/app.http.service.js"></script>
+    <script src="/app/components/header/header.controller.js"></script>
+    <script src="/app/components/module/module.controller.js"></script>
+</body>
+</html>

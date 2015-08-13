@@ -2,8 +2,8 @@ var gulp = require('gulp');
 var mocha = require('gulp-mocha');
 
 var paths = {
-    scripts: '**/*.js',
-    tests: 'sort/*.spec.js'
+    scripts: '**/*.app',
+    tests: 'sort/*.spec.app'
 };
 
 function handleError(err) {
