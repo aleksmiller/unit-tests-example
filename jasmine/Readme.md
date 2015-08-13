@@ -29,4 +29,4 @@ Node interpreter: path\to\node.exe
 
 Karma package: ...\unit-tests-example\jasmine\node_modules\karma
 
-Close dialog and execute Run -> Run 'All tests' (Shift + F10)
+Save and execute Run -> Run 'All tests' (Shift + F10)
