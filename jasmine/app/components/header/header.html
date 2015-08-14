@@ -1,6 +1,5 @@
 <header class="navbar navbar-inverse" ng-controller="HeaderController as hc">
     <div class="container">
-        {{vm.nav}}
         <ul class="nav navbar-nav">
             <li ng-repeat="navItem in hc.nav" ui-sref-active="active">
                 <a ui-sref="{{navItem.sref}}">{{navItem.title}}</a>
