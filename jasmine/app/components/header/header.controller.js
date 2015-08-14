@@ -10,14 +10,15 @@
     function HeaderController(appHttp) {
         var vm = this;
 
-        //appHttp.nav().then(function(data) {
-        //    vm.nav = data;
-        //});
+        vm.nav = [];
+        loadNav();
 
-        vm.nav = [
-            { "sref": "home", "title": "Home" },
-            { "sref": "about", "title": "About" }
-        ];
+        function loadNav() {
+            appHttp.nav().success(function(data) {
+                vm.nav = data;
+                return vm.nav;
+            });
+        }
 
         return vm;
     }

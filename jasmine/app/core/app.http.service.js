@@ -6,9 +6,7 @@
 
     function AppHttp($http) {
         function getNav() {
-            $http.get('/api/header.nav.json', function(response) {
-               return response;
-            });
+            return $http.get('/api/header.nav.json');
         }
 
         return {
