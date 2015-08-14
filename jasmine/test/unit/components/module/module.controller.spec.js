@@ -1,25 +1,21 @@
 describe("ModuleController", function() {
-    var ctrl, foo, $scope;
+    var ctrl, $scope;
 
     beforeEach(module('app'));
 
     beforeEach(inject(function($rootScope, $controller) {
-        foo = {
-            fn: function() {}
-        };
-
-        spyOn(foo, 'fn').and.returnValue("Foo");
-
         $scope = $rootScope.$new();
 
-        ctrl = $controller('ModuleController', {$scope: $scope , foo: foo });
+        ctrl = $controller('ModuleController', {
+            $scope: $scope
+        });
     }));
 
     describe("updateClick()", function() {
 
         it("should update clicked value", function() {
-            // TODO: ModuleController.updateClick()
-            expect(true).toBe(true);
+            ctrl.updateClick();
+            expect(ctrl.clicked).toBe(1);
         });
     });
 });
